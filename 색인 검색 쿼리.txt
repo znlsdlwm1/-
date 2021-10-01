@@ -1,3 +1,4 @@
+전체or ㄱㄴㄷㄹ 등 조회
 SELECT 
     Id
     ,Name
@@ -24,6 +25,7 @@ WHERE
 		                ELSE 'ㅎ'
 		        END = 'ㅎ'
 	
+ㄱㄴㄷㄹ를 제외한 대소문자, 영어로 표현댄 모든 값을 불러올때
 SELECT 
     Id
     ,Name

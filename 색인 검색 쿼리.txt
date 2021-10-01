@@ -1,0 +1,35 @@
+SELECT 
+    Id
+    ,Name
+    ,age 
+FROM 
+    NameTable 
+WHERE 
+     CASE WHEN COL_NAME < 'ㄱ' then SUBSTR(Name, 1, 1)
+		                WHEN ascii('ㄱ') <= ascii(Name)
+		        AND ascii(Name) <= ascii('ㅎ') THEN Name
+		                WHEN Name < '나' THEN 'ㄱ'
+		                WHEN Name < '다' THEN 'ㄴ'
+		                WHEN Name < '라' THEN 'ㄷ'
+		                WHEN Name < '마' THEN 'ㄹ'
+		                WHEN Name < '바' THEN 'ㅁ'
+		                WHEN Name < '사' THEN 'ㅂ'
+		                WHEN Name < '아' THEN 'ㅅ'
+		                WHEN Name < '자' THEN 'ㅇ'
+		                WHEN Name < '차' THEN 'ㅈ'
+		                WHEN Name < '카' THEN 'ㅊ'
+		                WHEN Name < '타' THEN 'ㅋ'
+		                WHEN Name < '파' THEN 'ㅌ'
+		                WHEN Name < '하' THEN 'ㅍ'
+		                ELSE 'ㅎ'
+		        END = 'ㅎ'
+	
+SELECT 
+    Id
+    ,Name
+    ,age
+FROM
+    NameTable
+WHERE 
+    REGEXP_LIKE (Name, '^[A-Za-z0-9].*')
+						
